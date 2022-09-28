@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="title" align="center">
+        <h3>SD 208 Activity -
+            <span>JUSPHER BALANGYAO</span>
+            <h3>
+    </div>
+    <div class="page" id="registerPage" style="display: none;">
+        <form method="POST" id="registration"
+        onsubmit="return formSubmit(this);" action="registration.php">
+            <h1>Register Account</h1>
+            <p>
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="enter firstname here..."
+                    onfocus="deleteErrors(this)">
+            </p>
+
+            <p>
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="enter lastname here... "
+                    onfocus="deleteErrors(this)">
+            </p>
+
+            <p>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="enter address here..."
+                    onfocus="deleteErrors(this)" />
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="enter email here..."
+                    onfocus="deleteErrors(this)" />
+            </p>
+
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="enter password here.."
+                    onfocus="deleteErrors(this)" />
+            </p>
+
+            <p>
+                <label for="confirmpass">Confirm Password:</label>
+                <input type="password" id="confirmpass" name="confirmpass" placeholder="confirm your password here..."
+                    onfocus="deleteErrors(this)" />
+            </p>
+
+            <p align="center">
+                <button type="submit" id="register">Submit</button>
+            </p>
+            <p align="center" class="login">
+                Have already account? <span onclick="show('login')">Login</span>
+            </p>
+        </form>
+        <div id="errorMessages">
+        </div>
+    </div>
+    <div class="account page" id="login" style="display: block;">
+        <form id="registration">
+            <h1>Login</h1>
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="ex: johndoe@gmail.com" />
+            </p>
+
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="enter your password..." />
+            </p>
+
+            <p align="center">
+                <button type="submit" id="login">Login</button>
+            </p>
+            <p align="center" class="login">
+                Don't have account? <span onclick="show('registerPage')">Create</span>
+            </p>
+        </form>
+    </div>
+
+    <script src="validate.js">
+    </script>
+
+</body>
+
+</html>
